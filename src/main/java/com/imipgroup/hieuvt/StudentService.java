@@ -12,7 +12,7 @@ import java.util.List;
 @Service("StudentService")
 public class StudentService {
 
-    public List<Student> getAllStudents(){
+    public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<Student>();
 
         Student student = new Student();
