@@ -6,13 +6,15 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/")
-public class HelloController {
+@SessionAttributes("thought")
+public class StudentController {
 
     @Autowired
     private StudentService studentService;
@@ -36,6 +38,9 @@ public class HelloController {
 
     @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
     public String addStudent(@ModelAttribute("SpringWeb") Student student, ModelMap model){
+        if (!model.containsAttribute("thought")){
+            model.addAttribute("thought", student.getName());
+        }
         model.addAttribute("name", student.getName());
         return "result";
     }

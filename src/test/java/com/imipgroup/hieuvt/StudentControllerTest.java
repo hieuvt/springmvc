@@ -2,14 +2,12 @@ package com.imipgroup.hieuvt;
 
 import junit.framework.TestCase;
 
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
+public class StudentControllerTest extends TestCase {
 
-public class HelloControllerTest extends TestCase {
-
-    HelloController helloController;
+    StudentController helloController;
     @Override
     protected void setUp() throws Exception {
-        helloController = new HelloController();
+        helloController = new StudentController();
     }
 
     public void testGetAllStudents() throws Exception {

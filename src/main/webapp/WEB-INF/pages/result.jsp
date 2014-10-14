@@ -11,6 +11,8 @@
     <title></title>
 </head>
 <body>
-${name}
+Session student: ${thought}
+<br/>
+Recent student: ${name}
 </body>
 </html>
